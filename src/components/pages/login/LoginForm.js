@@ -1,15 +1,17 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 //LoginForm est un composant spécifique
 const LoginForm = () => {
     
         //state
         const [inputValue, setInputValue] = useState("");
+        const navigate = useNavigate();
     
       //comportements
       const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Bonjour ${inputValue}`);
         setInputValue("");
+        navigate(`/order/${inputValue}`);
       };
       const handleChange = (e) => {
         setInputValue(e.target.value);
