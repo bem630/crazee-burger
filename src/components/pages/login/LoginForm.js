@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 //LoginForm est un composant spécifique
 const LoginForm = () => {
     
@@ -19,7 +20,9 @@ const LoginForm = () => {
                 <h1>Bienvenue chez nous !</h1><br />
                 <h2>Connectez vous</h2>
                 <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required />
-                <button>Accédez à votre espace</button>
+                <Link to={'/order'}>
+                  <button>Accédez à votre espace</button>
+                </Link>
             </form>
      );
 }
