@@ -1,16 +1,17 @@
 import { useState } from "react"
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //LoginForm est un composant spécifique
 const LoginForm = () => {
     
         //state
         const [inputValue, setInputValue] = useState("");
+        const navigate = useNavigate();
     
       //comportements
       const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Bonjour ${inputValue}`);
         setInputValue("");
+        navigate(`/order/${inputValue}`);
       };
       const handleChange = (e) => {
         setInputValue(e.target.value);
@@ -20,9 +21,7 @@ const LoginForm = () => {
                 <h1>Bienvenue chez nous !</h1><br />
                 <h2>Connectez vous</h2>
                 <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required />
-                <Link to={'/order'}>
-                  <button>Accédez à votre espace</button>
-                </Link>
+                <button>Accédez à votre espace</button>
             </form>
      );
 }
