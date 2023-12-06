@@ -11,7 +11,6 @@ const Logo = () => {
 export default Logo;
 
 const LogoStyled = styled.div`
-    color: white;
     display: flex;
     align-items: center;
     transform: scale(2.5);
