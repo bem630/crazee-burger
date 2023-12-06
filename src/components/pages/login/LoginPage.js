@@ -17,10 +17,13 @@ const LoginPage = () => {
  
 export default LoginPage;
 const LoginPageStyled = styled.div`
-  background-color: red;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url("images/burger-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
 `;
