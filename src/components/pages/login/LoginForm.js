@@ -2,8 +2,9 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
+import { FaChevronRight } from "react-icons/fa";
 /*import { theme } from "../../../theme";
-import { FaChevronRight } from "react-icons/fa";*/
+*/
 
 //LoginForm est un composant spécifique
 const LoginForm = () => {
@@ -32,7 +33,10 @@ const LoginForm = () => {
                     <BsPersonCircle className="icon"/>
                     <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom" required />
                   </div>
-                  <button>Accédez à mon espace </button>
+                  <button className="button-with-icon">
+                    <span>Accédez à mon espace </span>
+                    <FaChevronRight className="icon-btn"/>
+                  </button>
                 </div>
             </LoginFormStyled>
      );
@@ -93,15 +97,37 @@ const LoginFormStyled = styled.div`
     background-color: white;
     color: lightgrey;
   }
-
-  button {
-    padding: 10px 0;
+  .button-with-icon {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
+    font-size: 15px;
+    padding: 18px 24px;
+    font-weight: 800;
+    line-height: 1;
+    background-color: #ff9f1b;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+  }
+  span {
     outline: none;
     border: none;
-    cursor: pointer;
   }
-    
+  .icon-btn {
+    font-size: 18px;
+  }
+  .button-with-icon:hover {
+    background-color: #fff;
+    color: #ff9f1b;
+    transition: all 200ms ease-out;
+    border: 1px solid #ff9f1b;
+  }
+  
 `;
 
 
@@ -112,6 +138,21 @@ const LoginFormStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover:not(:disabled) {
+    transition: all 200ms ease-out;
+    background-color: #fff;
+    border: 1px solid #ff9f1b;
+  }
+  &:active {
+    color: #fff;
+    background-color: #ff9f1b;
+    border: 1px solid #ff9f1b;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
   h1, h2 {
     font-family: 'Amatic SC', sans-serif;
