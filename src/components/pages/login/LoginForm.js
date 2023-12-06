@@ -24,7 +24,7 @@ const LoginForm = () => {
     return (
             <LoginFormStyled action="submit" onSubmit={handleSubmit}>
                 <div>
-                  <h1>Bienvenue chez nous !</h1><br />
+                  <h1>Bienvenue chez nous !</h1><hr />
                   <h2>Connectez-vous</h2>
                 </div>
                 <div>
@@ -38,12 +38,36 @@ const LoginForm = () => {
  
 export default LoginForm;
 const LoginFormStyled = styled.div`
-  background-color: green;
+  
+  text-align: center;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 5px;
+  font-family: 'Amatic SC', cursive;
+
   div {
     display: flex;
     flex-direction: column;
   }
+  hr {
+    border: 1.5px solid #f56a2c;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  h1 {
+    color: white;
+    font-size: 48px;
+  }
   
+  h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 10px;
+  }
+    
+    
 `;
 
 
