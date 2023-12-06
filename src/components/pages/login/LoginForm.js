@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { BsPersonCircle } from "react-icons/bs";
 /*import { theme } from "../../../theme";
-import { BiSolidUserCircle } from "react-icons/bi";
 import { FaChevronRight } from "react-icons/fa";*/
 
 //LoginForm est un composant spécifique
@@ -28,8 +28,10 @@ const LoginForm = () => {
                   <h2>Connectez-vous</h2>
                 </div>
                 <div>
-                  <input value={inputValue} onChange={handleChange} type="text" 
-                  placeholder="Entrez votre prénom" required />
+                  <div className="input-with-icon">
+                    <BsPersonCircle className="icon"/>
+                    <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom" required />
+                  </div>
                   <button>Accédez à mon espace </button>
                 </div>
             </LoginFormStyled>
@@ -66,7 +68,39 @@ const LoginFormStyled = styled.div`
     font-size: 36px;
     margin: 20px 10px;
   }
-    
+  .input-with-icon {
+    display: flex;
+    flex-direction: row;
+    padding: 18px 24px;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: 18px 0;
+  }
+  .icon {
+    margin-right: 8px;
+    font-size: 15px;
+    color: #93a2b1;
+  }
+  input {
+    margin-right: 10px;
+    width: 100%;
+    outline-color: blue;
+    border: none;
+    color: #17161a;
+  }
+  &::placeholder {
+    background-color: white;
+    color: lightgrey;
+  }
+
+  button {
+    padding: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
     
 `;
 
