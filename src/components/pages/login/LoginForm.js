@@ -43,7 +43,7 @@ const LoginForm = () => {
 }
  
 export default LoginForm;
-const LoginFormStyled = styled.div`
+const LoginFormStyled = styled.form`
   
   text-align: center;
   max-width: 500px;
@@ -119,7 +119,8 @@ const LoginFormStyled = styled.div`
     border: none;
   }
   .icon-btn {
-    font-size: 18px;
+    font-size: 15px;
+    margin-left: 8px;
   }
   .button-with-icon:hover {
     background-color: #fff;
