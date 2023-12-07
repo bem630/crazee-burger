@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { BsPersonCircle } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa";
+import { BsPersonCircle } from "react-icons/bs";
+import Input from "./Input";
 /*import { theme } from "../../../theme";
 */
 
@@ -29,10 +30,9 @@ const LoginForm = () => {
                   <h2>Connectez-vous</h2>
                 </div>
                 <div>
-                  <div className="input-with-icon">
-                    <BsPersonCircle className="icon"/>
-                    <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom" required />
-                  </div>
+                  <Input value ={inputValue} onChange={handleChange} placeholder = {"Entrez votre prénom"}
+                   required Icon = {<BsPersonCircle className="icon"/>} />
+
                   <button className="button-with-icon">
                     <span>Accédez à mon espace </span>
                     <FaChevronRight className="icon-btn"/>
@@ -43,8 +43,63 @@ const LoginForm = () => {
 }
  
 export default LoginForm;
+
 const LoginFormStyled = styled.form`
-  
+  font-family: 'Amatic SC', cursive;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+
+  h1 {
+    color: white;
+    font-size: 48px;
+  }
+  hr {
+    border: 1.5px solid #f56a2c;
+    //width: 100%;
+    margin-bottom: 40px;
+  }
+  h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 10px;
+  }
+  .button-with-icon {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 18px 24px;
+    font-weight: 800;
+    line-height: 1;
+    background-color: #ff9f1b;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    width: 100%;
+  }
+  .icon-btn {
+    font-size: 15px;
+    margin-left: 8px;
+  }
+  .button-with-icon:hover {
+    background-color: #fff;
+    color: #ff9f1b;
+    transition: all 200ms ease-out;
+    border: 1px solid #ff9f1b;
+  }
+`;
+/*
+const LoginFormStyled = styled.form`
+  display: flex;
+  flex-direction: column;
   text-align: center;
   max-width: 500px;
   min-width: 400px;
@@ -72,31 +127,7 @@ const LoginFormStyled = styled.form`
     font-size: 36px;
     margin: 20px 10px;
   }
-  .input-with-icon {
-    display: flex;
-    flex-direction: row;
-    padding: 18px 24px;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    margin: 18px 0;
-  }
-  .icon {
-    margin-right: 8px;
-    font-size: 15px;
-    color: #93a2b1;
-  }
-  input {
-    margin-right: 10px;
-    width: 100%;
-    outline-color: blue;
-    border: none;
-    color: #17161a;
-  }
-  &::placeholder {
-    background-color: white;
-    color: lightgrey;
-  }
+ 
   .button-with-icon {
     border: none;
     display: flex;
@@ -129,7 +160,7 @@ const LoginFormStyled = styled.form`
     border: 1px solid #ff9f1b;
   }
   
-`;
+`;*/
 
 
 
