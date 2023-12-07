@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FaChevronRight } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
-import Input from "./Input";
+import TestInput from "./TextInput";
 /*import { theme } from "../../../theme";
 */
 
@@ -30,7 +30,7 @@ const LoginForm = () => {
                   <h2>Connectez-vous</h2>
                 </div>
                 <div>
-                  <Input value ={inputValue} onChange={handleChange} placeholder = {"Entrez votre prénom"}
+                  <TestInput value ={inputValue} onChange={handleChange} placeholder = {"Entrez votre prénom"}
                    required Icon = {<BsPersonCircle className="icon"/>} />
 
                   <button className="button-with-icon">
