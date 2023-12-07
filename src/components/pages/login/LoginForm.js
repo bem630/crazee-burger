@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { FaChevronRight } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
-import TestInput from "./TextInput";
+import TestInput from "../../reusale-ui/TextInput";
+import { FaChevronRight } from "react-icons/fa";
+import PrimaryButton from "../../reusale-ui/PrimaryButton";
 /*import { theme } from "../../../theme";
 */
 
@@ -33,10 +34,7 @@ const LoginForm = () => {
                   <TestInput value ={inputValue} onChange={handleChange} placeholder = {"Entrez votre prénom"}
                    required Icon = {<BsPersonCircle className="icon"/>} />
 
-                  <button className="button-with-icon">
-                    <span>Accédez à mon espace </span>
-                    <FaChevronRight className="icon-btn"/>
-                  </button>
+                  <PrimaryButton IconChevron = {<FaChevronRight className="icon-btn"/>} label={"Accédez à mon espace"} />
                 </div>
             </LoginFormStyled>
      );
@@ -67,34 +65,12 @@ const LoginFormStyled = styled.form`
     font-size: 36px;
     margin: 20px 10px;
   }
-  .button-with-icon {
-    border: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 18px 24px;
-    font-weight: 800;
-    line-height: 1;
-    background-color: #ff9f1b;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-    transition: all 200ms ease-out;
-    width: 100%;
-  }
   .icon-btn {
     font-size: 15px;
     margin-left: 8px;
   }
-  .button-with-icon:hover {
-    background-color: #fff;
-    color: #ff9f1b;
-    transition: all 200ms ease-out;
-    border: 1px solid #ff9f1b;
-  }
+  
+  
 `;
 /*
 const LoginFormStyled = styled.form`
