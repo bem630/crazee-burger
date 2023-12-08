@@ -35,10 +35,12 @@ const InputStyled = styled.div`
     color: #17161a;
     font-size: 15px;
     width: 100%;
-  }
-  &::placeholder {
+    
+    &::placeholder {
     background-color: white;
     color: lightgrey;
   }
+  }
+  
   
 `;

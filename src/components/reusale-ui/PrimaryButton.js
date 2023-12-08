@@ -29,7 +29,6 @@ const PrimaryButtonStyled = styled.button`
     cursor: pointer;
     transition: all 200ms ease-out;
     width: 100%;
-  
   &:hover {
     background-color: #fff;
     color: #ff9f1b;
